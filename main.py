@@ -1,3 +1,4 @@
+
 def calc_100m_primes(n: int):
     is_prime = [False, False] + [True] * (n - 1)
     primes = [2]
