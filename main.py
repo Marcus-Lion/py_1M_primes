@@ -15,7 +15,7 @@ def calc_100m_primes(n: int):
             for j in range(i * i, n + 1, i):
                 is_prime[j] = False
 
-            if len(primes) % 10000 == 0:
+            if len(primes) % 100000 == 0:
                 print(f"primes found {len(primes)}")
 
     print(primes[-10:])
