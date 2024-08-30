@@ -27,7 +27,7 @@ if __name__ == "__main__":
     print("without GPU:", timer() - start)
 
     dev = cuda.get_current_device()
-    print("Running on GPU:", dev.name)
+    print(f"Running on GPU: {dev.name}")
 
     start = timer()
     func2(a)
