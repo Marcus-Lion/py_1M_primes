@@ -9,3 +9,4 @@ versioneer==0.29
 wheel
 pywin32; sys_platform == 'win32'
 numba~=0.60.0
+anthropic~=0.34.2
