@@ -1,8 +1,14 @@
+import math
+
+
 def is_prime(n: int, primes: [int]) -> bool:
-    # if n < 2:
-    #     return False
-    #
+    # if n < 2: return False
+
+    r = math.sqrt(n)
     for i in primes[1:]:
+        if i > r:
+            break
+
         if n % i == 0:
             return False
 

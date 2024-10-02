@@ -1,8 +1,14 @@
+import math
+
+
 def is_prime(n: int, primes: [int]) -> bool:
-    # if n < 2:
-    #     return False
-    #
+    # if n < 2: return False
+
+    r = math.sqrt(n)
     for i in primes[1:]:
+        if i > r:
+            break
+
         if n % i == 0:
             return False
 
@@ -18,7 +24,7 @@ def calc_n_primes(n: int):
         if is_prime(i, primes):
             primes.append(i)
             if (len(primes) % 100) == 0:
-                print(f"prime # {len(primes)} found {i}")
+                print(f"prime # {len(primes)} found {primes[-3:]}")
 
         i += 2
 
