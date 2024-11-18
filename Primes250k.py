@@ -1,37 +1,14 @@
-import math
+import time
 
+import cupy as np  # 574s
 
-def is_prime(n: int, primes: [int]) -> bool:
-    # if n < 2: return False
+from Primes import calc_n_primes
 
-    r = math.sqrt(n)
-    for i in primes[1:]:
-        if i > r:
-            break
-
-        if n % i == 0:
-            return False
-
-    return True
-
-def calc_n_primes(n: int):
-    print('initializing...')
-
-    primes = [2]
-
-    i = 3
-    while len(primes) < n:
-        if is_prime(i, primes):
-            primes.append(i)
-            if (len(primes) % 100) == 0:
-                print(f"prime # {len(primes)} found {primes[-3:]}")
-
-        i += 2
-
-    print(primes[-10:])
-    return len(primes)
-
+# import numpy as np  # 1037
 
 print(f'ml test {__file__}')
+np.show_config()
+tic = time.perf_counter()
 num = calc_n_primes(250_000)
-print(f"primes found {num}")
+toc = time.perf_counter()
+print(f"primes found {num} in {toc - tic:.04f}")
