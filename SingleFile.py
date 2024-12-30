@@ -1,3 +1,7 @@
+
+import subprocess
+subprocess.run("python -m pip install numpy", shell=True)
+
 import time
 import numpy as np  # 1037 @ 250k
 
@@ -22,9 +26,8 @@ def calc_n_primes(n: int):
     print(primes[-10:])
     return lp
 
-
 print(f'ml test {__file__}')
 tic = time.perf_counter()
-num = calc_n_primes(250_000)
+num = calc_n_primes(50_000)
 toc = time.perf_counter()
 print(f"primes found {num} in {toc - tic:.04f}")
